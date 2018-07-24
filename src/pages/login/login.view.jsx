@@ -1,5 +1,5 @@
 import React            from 'react';
-import styled, { consolidateStreamedStyles }           from 'styled-components';
+import styled           from 'styled-components';
 
 import background       from './background.jpg';
 import logoSm           from '../../assets/logo-sm.png';
@@ -13,13 +13,13 @@ export default( props ) => {
                 <form
                     onSubmit={ event =>{ 
                         event.preventDefault();
-                        // return props.loginToMain()
+                        return props.loginToMain(props.query.username, props.query.password)
                     }}>
                     <div className="form-group">
                         <label> Username </label>
                         <input 
                             className="form-control input-sm"
-                            // onChange={ event => }
+                            onChange={ event => props.onUsername( event.target.value )}
                         />
                     </div>
                     <div className="form-group">
@@ -27,8 +27,14 @@ export default( props ) => {
                         <input 
                             className="form-control input-sm" 
                             type="password"
+                            onChange={ event => props.onPassword( event.target.value )}
                         />
                     </div>
+                    {
+                        props.query.loginVaild?
+                        null:
+                        <div className="invaildWarning">Username or password not match</div>
+                    }
                     <button className="btn btn-success btn-sm width100"> login </button>
                 </form>
                 <div className="loginCardFooter">
@@ -68,8 +74,11 @@ const LoginPage = styled.div`
             margin: 16px 0px;
         }
 
-        &> from{
-            padding: 8px 0px 16px;
+        &> form{
+            &> .invaildWarning{
+                color: crimson;
+                padding-bottom: 10px;
+            }
         }
 
         &> .loginCardFooter{

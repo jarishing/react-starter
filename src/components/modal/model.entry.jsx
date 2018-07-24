@@ -29,8 +29,8 @@ const mapStateToProps = ( state, ownProps ) => ({
     tag : state.modalReducer.tag
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-}
+const mapDispatchToProps = (dispatch, ownProps) => ({
+});
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(ModalEntryPoint);

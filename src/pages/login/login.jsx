@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
+import {withCookies} from 'react-cookie';
+
 import * as baseAction from '../../reducers/base/action';
 import * as modalAction from '../../reducers/modal/action';
 
@@ -12,8 +14,9 @@ class Login extends Component {
         super(props);
         this.state = {
             query: {
-                uername     : "",
-                password    : ""
+                username    : "",
+                password    : "",
+                loginVaild  : true
             }
         }
         this.model = Model.bind(this)();
@@ -38,4 +41,4 @@ const mapDispatchToProps = ( dispatch, ownProps ) => ({
     login: ( username, password) => dispatch( baseAction.login(username, password ))
 });
 
-export default connect( mapStateToProps, mapDispatchToProps )(Login);
+export default withCookies(connect( mapStateToProps, mapDispatchToProps )(Login));

@@ -7,7 +7,7 @@ const HTMLWebpackPluginConfig = new HtmlWebpackPlugin({
 });
 
 module.exports = {
-    entry: ['babel-polyfill', './src/index.js'],
+    entry: ['babel-polyfill','./src/index.js'],
     output: {
         path: `${__dirname}/build`,
         filename: 'javascript/bundle.js',
@@ -43,9 +43,13 @@ module.exports = {
         ],
     },
     devServer: {
-        inline: true,
-        port: 3000,
-        historyApiFallback: true
+        inline  : true, 
+        port    : 3200,
+        proxy   : {
+            "/api": "http://localhost:3100"
+        },
+        historyApiFallback: true,
+        disableHostCheck: true
     },
     resolve: {
         extensions: ['.js', '.jsx'],

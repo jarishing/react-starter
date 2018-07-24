@@ -9,11 +9,9 @@ const initState = {
 const actionHandlers = {
     LOGIN : ( state, action ) => {
         let result = { ... state };
-        // result.login = true;
-        // result.token = action.payload.token;
-        // result.user = action.payload.user;
-        // console.log(result);
-        console.log("login hi");
+        result.login = true;
+        result.token = action.payload.token;
+        result.user = action.payload.user;
         return result;
     }
 };

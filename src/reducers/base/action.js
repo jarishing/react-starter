@@ -5,8 +5,9 @@ export const setLoginInfo      = ( user, token )    => ({ type: 'LOGIN',        
 
 export function login ( username, password ){
     return async function( dispatch, getState ){
-        let info = await axios.post(`${baseUrl}/auth/login`, {username, password} );
-        info = info.data; 
-        return dispatch(setLoginInfo( { username: info.username}, info.token));
+        const body = {username: username, password: password};
+        let info = await axios.post(`${baseUrl}/auth/login`, body );
+        info = info.data;
+        return dispatch(setLoginInfo( info.username, info.token));
     }   
 }
