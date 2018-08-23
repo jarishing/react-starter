@@ -2,10 +2,10 @@ const modalTag = function(){
 
     return {
 
-        DEFAULT     : 'default',
+        DEFAULT                 : 'default',
 
-        TEST        : 'TEST',
-        TEST2       : 'TEST2'
+        ADVANCEDSEARCH          : 'ADVANCEDSEARCH',
+        TEST2                   : 'TEST2'
     }
 
 }();

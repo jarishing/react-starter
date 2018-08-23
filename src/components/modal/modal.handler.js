@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Test     from './test/test';
+import AdvancedSearch from './advancedsearch/advancedsearch';
 import Test2    from './test2/test2';
 
 const DefaultModal = () => <div/>;
@@ -8,12 +8,13 @@ const DefaultModal = () => <div/>;
 let MODAL = {
     default         : DefaultModal,
 
-    TEST            : Test,
+    ADVANCEDSEARCH  : AdvancedSearch,
     TEST2           : Test2
 }
 
 export default (props) => {
     const Handler = MODAL[props.tag || 'default'];
+    // const Handler = MODAL['ADVANCEDSEARCH'];
     return (
         <Handler />
     )

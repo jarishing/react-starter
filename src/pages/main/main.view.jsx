@@ -1,34 +1,33 @@
 import React            from 'react';
 import styled           from 'styled-components';
 
-// import MediaList        from './media.list/media.list';
-import Header           from './main.header';
-
-import Sidebar          from '../../components/sidebar/sidebar.entry';
-import FunctionList     from './function.list/function.list';
-
-import MediaList        from './media.list/media.list';
-import DashboardList    from './dashboard.list/dashboard.list';
+import Header           from './main.header/main.header';
+import Page             from './main.page/main.page.entry';
 
 export default( props ) => {
     return (
         <MainPage>
-            <Header />
+            <Header/>
             <div className="pageOuter">
-                <Sidebar/>
-                <FunctionList/>
             </div>
             <div className="scrollPage">
                 <div className="container">
-                    <div className="pageContent">
-                        <MediaList/>
-                    </div>
-                    <DashboardList/>
+                    <Page/>
                 </div>
             </div>
         </MainPage>
     )
 };
+
+// <div className="pageOuter">
+//                 <Sidebar/>
+//                 <FunctionList/>
+//             </div>
+
+// <div className="pageContent">
+//                         <MediaList/>
+//                     </div>
+//                     <DashboardList/>
 
 const MainPage = styled.div`
     background-color:  #EFEFF1;
@@ -49,13 +48,13 @@ const MainPage = styled.div`
         }
 
         &> .container{
-            width: 1210px;
+            width: 1240px;
             marigin: 0 auto;
             display: flex;
             
             &> .pageContent{
                 width: 590px;
-                margin-left: 310px;
+                margin-left: 270px;
             }
         }
     }

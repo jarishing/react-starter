@@ -1,0 +1,107 @@
+.analysis-overview-top-wrapper{
+    width: 100%;
+    height: 150px;
+    display: flex;
+    border-bottom: 1px solid lightgray;
+}
+
+.analysis-overview-item{
+    width: 33.3%;
+    height: 100%;
+    border-right: 1px solid lightgray;
+    background-color: white;
+    cursor: pointer;
+}
+
+.analysis-overview-item:hover *{
+    background-color: #F4F7F9;
+}
+
+.analysis-overview-item-header{
+    padding: 20px 20px 0;
+}
+
+.analysis-overview-item-header--selected{
+    padding: 20px 20px 0;
+}
+
+.analysis-overview-item-content{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #595959;
+    font-size: 24px;
+    padding-top: 10px;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.analysis-overview-item-content--selected{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #158FD8;
+    font-size: 24px;
+    padding-top: 10px;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+
+.analysis-overview-item-titie{
+    height: 58px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    color: #595959;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-top: 4px;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.analysis-overview-item-titie--selected{
+    height: 58px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    color: #158FD8;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding-top: 4px;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+.analysis-overview-item-content-addtion{
+    font-size: 13px;
+    display: flex;
+    align-self: start;
+    padding-top: 6px;
+    padding-left: 3px;
+}
+
+.analysis-overview-item-last{
+    width: 33.3%;
+    height: 100%;
+    background-color: white;
+    cursor: pointer;
+}
+
+.analysis-overview-item-last:hover *{
+    background-color: #F4F7F9;
+}
+
+
+.analysis-overview-bottom-wrapper{
+    width: 100%;
+    height: 150px;
+    display: flex;
+}
+
+.analysis-overview-loader{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

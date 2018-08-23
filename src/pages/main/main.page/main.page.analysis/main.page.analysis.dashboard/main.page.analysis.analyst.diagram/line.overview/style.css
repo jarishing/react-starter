@@ -1,0 +1,20 @@
+.line-chart-overview-title{
+    color: #14171a;
+}
+
+.line-chart-overview-container{
+    width: 572px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.line-chart-loader{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}

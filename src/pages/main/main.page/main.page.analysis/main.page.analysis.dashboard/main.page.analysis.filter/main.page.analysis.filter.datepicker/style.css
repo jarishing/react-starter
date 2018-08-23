@@ -1,0 +1,16 @@
+.analysis-Filter-DatePicker-Item{
+    display: flex;
+    margin-left: 15px;
+}
+
+.analysis-Filter-DatePicker-Title{
+    font-size: 12px;
+    align-self: center;
+}
+
+.analysis-Filter-DatePicker-Input-Wrapper{
+    display: flex;
+    border-bottom: 1px solid lightgrey;
+    margin-left: 10px;
+    width: 165px;
+}

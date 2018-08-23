@@ -1,7 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 
+import * as searchAction from '../../../../reducers/search/action';
+import SubsourceTag       from '../../../../constant/subsource';
+
 import Handler from './filter.subsourc.handler';
+
+var iTime;
 
 class FilterSubsourceEntryPoint extends Component {
 
@@ -14,6 +19,15 @@ class FilterSubsourceEntryPoint extends Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
+        if( prevProps.tag != this.props.tag && prevProps.tag !== SubsourceTag.DEFAULT){
+            clearTimeout(iTime);
+            iTime = setTimeout( 
+                function (){
+                this.props.searching();
+                }
+                .bind(this),3000
+            )
+        }
     }
 
 
@@ -25,10 +39,11 @@ class FilterSubsourceEntryPoint extends Component {
 }
 
 const mapStateToProps = ( state, ownProps ) => ({ 
-    tag : state.sidebarReducer.subsourceTag
+    tag                 : state.sidebarReducer.subsourceTag
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
+    searching           : () => dispatch( searchAction.searching()),
 });
 
 

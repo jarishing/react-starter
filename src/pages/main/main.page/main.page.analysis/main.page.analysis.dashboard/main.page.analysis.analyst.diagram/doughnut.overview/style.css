@@ -1,0 +1,63 @@
+.doughnut-overview-title{
+    color: #14171a;
+}
+
+.doughnut-loader{
+    width: 100%;
+    height: 333px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+}
+
+.doughnut-overview-body-wrapper{
+    height: 300px;
+    display: flex;
+    padding: 0 30px;
+}
+
+.doughnut-overview-body{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.doughnut-overview-container{
+    width: 250px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.doughnut-overview-dataList-Warpper{
+    width: 212px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+}
+
+.doughnut-overview-dataList-legend{
+    display: flex;
+    padding: 3px 0;
+}
+
+.doughnut-overview-dataList-legend-colorBlock{
+    width: 20px;
+    height: 20px;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+.doughnut-overview-dataList-title-Wrapper{
+    display: flex;
+}
+
+.doughnut-overview-dataList-title{
+    font-size: 13px;
+    margin: 0 10px;
+    margin-top: 1px;
+    width: 80px;
+}

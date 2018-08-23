@@ -52,7 +52,7 @@ module.exports = {
         disableHostCheck: true
     },
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.css'],
     },
     plugins: [HTMLWebpackPluginConfig],
     node: {

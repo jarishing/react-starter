@@ -1,4 +1,3 @@
-
 const Model = function () {
 
     return { };

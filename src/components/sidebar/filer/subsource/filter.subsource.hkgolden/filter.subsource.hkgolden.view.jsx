@@ -4,157 +4,51 @@ import styled           from 'styled-components';
 import { Checkbox, Icon, Divider, Input}  from 'antd';
 
 export default( props ) => {
+    const suffix = props.query.keyword ? <Icon type="close-circle" style={{ color: 'rgba(0,0,0,.25)' }} onClick={() => props.keywordClear()}/> : null;
+
     return (
         <SubsourceList>
             <div className="tri"/>
             <div className="subsourceListWrapper">
-                <div className="subsourceListContainer">
-                    <div className="header">
-                        <Checkbox>All</Checkbox>
-                        <a>clear all</a>
-                    </div>
-                    <Divider/>
-                    <Input
-                        prefix={<Icon type="search" style={{ color: 'rgba(0,0,0,.25)' }} />}
-                    />
-                    <div className="body">
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Android 技術討論區</div>
+            {
+                props.subsourceList?
+                    <div className="subsourceListContainer">
+                        <div className="header">
+                            <Checkbox
+                                onChange={ props.onAllSelected }
+                                checked={ props.query.checkAll }
+                                >
+                                All
+                            </Checkbox>
                         </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Google Nexus 及 其他品牌機種及技術討論區</div>
+                        <Divider/>
+                        <Input
+                            prefix={<Icon type="search" style={{ color: 'rgba(0,0,0,.25)' }} />}
+                            onChange={ event => props.filterSubsource(event.target.value) }
+                            value={ props.query.keyword }
+                            suffix={suffix}
+                        />
+                        <div className="body">
+                        {
+                            props.query.filterList.map((item, index) =>(
+                                <div className="subsourceItemWrapper" key={index}>
+                                    {
+                                        <div className="subsourceItem">
+                                            <Checkbox
+                                                checked={ props.source.indexOf(item) > -1}
+                                                onChange={ () => props.onSubsourceSelected( item ) }
+                                            />
+                                            <div className="subsourceTitle">
+                                                <p>{item.split('_')[1]}</p>
+                                            </div>
+                                        </div>
+                                    }
+                                </div>
+                            ))
+                        }
                         </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">IVE</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">LG - Android 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Samsung - Android 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">ViuTV電視節目</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Windows Phone 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">iPhone 技術,Q&A及綜合討論</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">上班一族</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Android 技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Google Nexus 及 其他品牌機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">IVE</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">LG - Android 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Samsung - Android 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">ViuTV電視節目</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Windows Phone 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">iPhone 技術,Q&A及綜合討論</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">上班一族</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Android 技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Google Nexus 及 其他品牌機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">IVE</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">LG - Android 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Samsung - Android 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">ViuTV電視節目</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Windows Phone 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">iPhone 技術,Q&A及綜合討論</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">上班一族</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Android 技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Google Nexus 及 其他品牌機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">IVE</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">LG - Android 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Samsung - Android 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">ViuTV電視節目</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Windows Phone 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">iPhone 技術,Q&A及綜合討論</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">上班一族</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Android 技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Google Nexus 及 其他品牌機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">IVE</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">LG - Android 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Samsung - Android 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">ViuTV電視節目</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">Windows Phone 機種及技術討論區</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">iPhone 技術,Q&A及綜合討論</div>
-                        </div>
-                        <div className="subsourceItem">
-                            <Checkbox/><div className="subsourceTitle">上班一族</div>
-                        </div>
-                    </div>
-                </div>
+                    </div>: null
+            }
             </div>
         </SubsourceList>
     )
@@ -195,7 +89,7 @@ const SubsourceList = styled.div`
         background-color: white;
         position:fixed;
         left: 94px;
-        top: calc(15vh + 87px);
+        top: calc(15vh + 84px);
 
         &> .subsourceListContainer{
             padding: 14px;
@@ -251,19 +145,23 @@ const SubsourceList = styled.div`
                 }
                     
 
-                &> .subsourceItem{
+                &> .subsourceItemWrapper{
                     margin: 0 1px 2px;
-                    display: flex;
 
-                    &> .subsourceTitle{
-                        font-size: 13px;
-                        margin-left: 5px;
-                        margin-top: 2px;
-                        margin-right: 4px;
-                        align-self: center;
+                    &> .subsourceItem{
+                        display: flex;
+
+                        &> .subsourceTitle{
+                            font-size: 13px;
+                            align-self: center;
+                            padding: 2px 10px 1px;
+    
+                            &> p{
+                                margin-bottom: 0;
+                            }
+                        }
                     }
                 }
-
             }
         }
     }

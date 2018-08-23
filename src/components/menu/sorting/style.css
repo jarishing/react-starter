@@ -1,0 +1,42 @@
+.menuItemWrapper{
+    padding: 6px 10px;
+    display: flex;
+}
+
+.menuItemWrapperSelected{
+    padding: 6px 10px;
+    display: flex;
+}
+
+.menuItemWrapper:hover .menuItemTitle{
+    color: #158FD8;
+}
+
+
+.menuItemTitle{
+    min-width: 75px;
+    text-align: center;
+    padding-left: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: rgb(124, 124, 124);
+    margin-top: 1px;
+    align-self: center;
+}
+
+.menuItemTitleSelected{
+    min-width: 75px;
+    text-align: center;
+    padding-left: 10px;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    line-height: 12px;
+    text-transform: uppercase;
+    color: #158FD8;
+    margin-top: 1px;
+    align-self: center;
+}

@@ -1,0 +1,27 @@
+.analyst-datatype-wrapper{
+    width: 100%;
+    height: 372px;
+}
+
+.analyst-datatype-body{
+    width: 100%;
+    height: 372px;
+}
+
+.analyst-datatype-leftButton{
+    width: 30px;
+    height: 300px;
+    bottom: 343px;
+    line-height: 326px;
+    position: relative;
+}
+
+.analyst-datatype-rightButton{
+    width: 30px;
+    height: 300px;
+    bottom: 643px;
+    left: 542px;
+    line-height: 326px;
+    padding-left: 10px;
+    position: relative;
+}
